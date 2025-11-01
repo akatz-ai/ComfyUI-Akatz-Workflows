@@ -1,0 +1,146 @@
+[project]
+name = "comfydock-env-test7"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.11.8",
+    "alembic",
+    "av>=14.2.0",
+    "comfyui-embedded-docs==0.3.0",
+    "comfyui-frontend-package==1.27.10",
+    "comfyui-workflow-templates==0.1.95",
+    "einops",
+    "kornia>=0.7.1",
+    "numpy>=1.25.0",
+    "pillow",
+    "psutil",
+    "pydantic~=2.0",
+    "pydantic-settings~=2.0",
+    "pyyaml",
+    "requests>=2.31.0",
+    "safetensors>=0.4.2",
+    "scipy",
+    "sentencepiece",
+    "spandrel",
+    "sqlalchemy",
+    "tokenizers>=0.13.3",
+    "torch",
+    "torchaudio",
+    "torchsde",
+    "torchvision",
+    "tqdm>=4.60.0",
+    "transformers>=4.37.2",
+    "yarl>=1.18.0",
+]
+
+[tool.comfydock]
+comfyui_version = "v0.3.65"
+python_version = "3.12"
+
+[tool.comfydock.nodes.comfyui-videohelpersuite]
+name = "ComfyUI-VideoHelperSuite"
+registry_id = "comfyui-videohelpersuite"
+repository = "https://github.com/kosinkadink/comfyui-videohelpersuite"
+version = "1.7.7"
+download_url = "https://cdn.comfy.org/kosinkadink/comfyui-videohelpersuite/1.7.7/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-basic-math]
+name = "ComfyUI-Basic-Math"
+registry_id = "comfyui-basic-math"
+repository = "https://github.com/akatz-ai/comfyui-basic-math"
+version = "0.0.6"
+download_url = "https://cdn.comfy.org/akatz/comfyui-basic-math/0.0.6/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-depthanythingv2]
+name = "ComfyUI-DepthAnythingV2"
+registry_id = "comfyui-depthanythingv2"
+repository = "https://github.com/kijai/comfyui-depthanythingv2"
+version = "1.0.1"
+download_url = "https://cdn.comfy.org/kijai/comfyui-depthanythingv2/1.0.1/node.tar.gz"
+source = "registry"
+
+[tool.comfydock.nodes.rgthree-comfy]
+name = "rgthree-comfy"
+registry_id = "rgthree-comfy"
+repository = "https://github.com/rgthree/rgthree-comfy"
+version = "1.0.2509092031"
+download_url = "https://cdn.comfy.org/rgthree/rgthree-comfy/1.0.2509092031/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-depthflow-nodes]
+name = "ComfyUI-Depthflow-Nodes"
+registry_id = "comfyui-depthflow-nodes"
+repository = "https://github.com/akatz-ai/comfyui-depthflow-nodes"
+version = "1.2.2"
+download_url = "https://cdn.comfy.org/akatz/comfyui-depthflow-nodes/1.2.2/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.ComfyUI-WanVideoWrapper]
+name = "ComfyUI-WanVideoWrapper"
+registry_id = "ComfyUI-WanVideoWrapper"
+repository = "https://github.com/kijai/comfyui-wanvideowrapper"
+version = "1.3.4"
+download_url = "https://cdn.comfy.org/kijai/ComfyUI-WanVideoWrapper/1.3.4/node.zip"
+source = "registry"
+
+[tool.comfydock.workflows.depthflow_showcase_v2]
+nodes = ["comfyui-basic-math", "comfyui-depthanythingv2", "comfyui-depthflow-nodes", "comfyui-videohelpersuite", "rgthree-comfy"]
+path = "workflows/depthflow_showcase_v2.json"
+
+[[tool.comfydock.workflows.depthflow_showcase_v2.models]]
+filename = "depth_anything_v2_vitl_fp32.safetensors"
+category = "unknown"
+criticality = "optional"
+status = "resolved"
+nodes = [{node_id = "86", node_type = "DownloadAndLoadDepthAnythingV2Model", widget_idx = 0, widget_value = "depth_anything_v2_vitl_fp32.safetensors"}]
+hash = "54d0b2c7072d6582"
+
+[tool.comfydock.workflows.depthflow_showcase_v2.custom_node_map]
+"Mute / Bypass Repeater (rgthree)" = "rgthree-comfy"
+"Fast Bypasser (rgthree)" = "rgthree-comfy"
+
+[tool.comfydock.models]
+54d0b2c7072d6582 = {filename = "depth_anything_v2_vitl_fp32.safetensors", size = 1341306404, relative_path = "depthanything/depth_anything_v2_vitl_fp32.safetensors", category = "unknown"}
+
+[tool.uv]
+constraint-dependencies = ["torch==2.9.0+cu128", "torchvision==0.24.0+cu128", "torchaudio==2.9.0+cu128"]
+index = [{name = "pytorch-cu128",url = "https://download.pytorch.org/whl/cu128",explicit = true}]
+
+[tool.uv.sources.torch]
+index = "pytorch-cu128"
+
+[tool.uv.sources.torchvision]
+index = "pytorch-cu128"
+
+[tool.uv.sources.torchaudio]
+index = "pytorch-cu128"
+[dependency-groups]
+comfyui-depthanythingv2-16ef6428 = [
+    "accelerate",
+    "huggingface-hub",
+]
+comfyui-depthflow-nodes-31111da7 = [
+    "depthflow==0.9.1",
+    "numpy",
+    "opencv-python",
+    "pydantic",
+]
+comfyui-videohelpersuite-ffcc3e88 = [
+    "imageio-ffmpeg",
+    "opencv-python",
+]
+comfyui-wanvideowrapper-4327e958 = [
+    "accelerate>=1.2.1",
+    "diffusers>=0.33.0",
+    "einops",
+    "ftfy",
+    "gguf>=0.17.1",
+    "opencv-python",
+    "peft>=0.17.0",
+    "protobuf",
+    "pyloudnorm",
+    "scipy",
+    "sentencepiece>=0.2.0",
+]
