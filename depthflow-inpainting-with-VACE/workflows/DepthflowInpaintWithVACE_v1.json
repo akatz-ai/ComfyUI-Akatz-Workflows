@@ -62,7 +62,7 @@
         180.6060791015625
       ],
       "order": 28,
-      "mode": 4,
+      "mode": 0,
       "title": "CLIP Text Encode (Negative Prompt)",
       "color": "#322",
       "bgcolor": "#533"
@@ -86,7 +86,7 @@
         110.0
       ],
       "order": 0,
-      "mode": 4,
+      "mode": 0,
       "title": "About Video Size",
       "color": "#432",
       "bgcolor": "#653"
@@ -102,13 +102,24 @@
           "name": "a",
           "type": "INT,FLOAT",
           "link": 56,
+          "localized_name": "a",
           "slot_index": 0
         },
         {
           "name": "b",
           "type": "INT,FLOAT",
           "link": 57,
+          "localized_name": "b",
           "slot_index": 1
+        },
+        {
+          "name": "operation",
+          "type": "COMBO",
+          "localized_name": "operation",
+          "widget": {
+            "name": "operation"
+          },
+          "slot_index": 2
         }
       ],
       "outputs": [
@@ -118,6 +129,7 @@
           "links": [
             209
           ],
+          "localized_name": "NUMBER",
           "slot_index": 0
         }
       ],
@@ -183,10 +195,19 @@
       "id": 43,
       "type": "DownloadAndLoadDepthAnythingV2Model",
       "widgets_values": [
-        "depth_anything_v2_vitl_fp32.safetensors",
-        "auto"
+        "depth_anything_v2_vitl_fp32.safetensors"
       ],
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "COMBO",
+          "localized_name": "model",
+          "widget": {
+            "name": "model"
+          },
+          "slot_index": 0
+        }
+      ],
       "outputs": [
         {
           "name": "da_v2_model",
@@ -194,6 +215,7 @@
           "links": [
             48
           ],
+          "localized_name": "da_v2_model",
           "slot_index": 0
         }
       ],
@@ -214,7 +236,7 @@
         450.0
       ],
       "size": [
-        305.3121032714844,
+        305.312109375,
         82.0
       ],
       "order": 1,
@@ -231,12 +253,14 @@
           "name": "da_model",
           "type": "DAMODEL",
           "link": 48,
+          "localized_name": "da_model",
           "slot_index": 0
         },
         {
           "name": "images",
           "type": "IMAGE",
           "link": 171,
+          "localized_name": "images",
           "slot_index": 1
         }
       ],
@@ -250,6 +274,7 @@
             68,
             291
           ],
+          "localized_name": "image",
           "slot_index": 0
         }
       ],
@@ -295,14 +320,88 @@
         {
           "name": "feature",
           "type": "FEATURE",
+          "localized_name": "feature",
           "shape": 7,
           "slot_index": 0
         },
         {
           "name": "effects",
           "type": "DEPTHFLOW_EFFECTS",
+          "localized_name": "effects",
           "shape": 7,
           "slot_index": 1
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "localized_name": "strength",
+          "widget": {
+            "name": "strength"
+          },
+          "slot_index": 2
+        },
+        {
+          "name": "feature_threshold",
+          "type": "FLOAT",
+          "localized_name": "feature_threshold",
+          "widget": {
+            "name": "feature_threshold"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "feature_param",
+          "type": "COMBO",
+          "localized_name": "feature_param",
+          "widget": {
+            "name": "feature_param"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "feature_mode",
+          "type": "COMBO",
+          "localized_name": "feature_mode",
+          "widget": {
+            "name": "feature_mode"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "inpaint_enable",
+          "type": "BOOLEAN",
+          "localized_name": "inpaint_enable",
+          "widget": {
+            "name": "inpaint_enable"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "inpaint_black",
+          "type": "BOOLEAN",
+          "localized_name": "inpaint_black",
+          "widget": {
+            "name": "inpaint_black"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "inpaint_limit",
+          "type": "FLOAT",
+          "localized_name": "inpaint_limit",
+          "widget": {
+            "name": "inpaint_limit"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "inpaint_color",
+          "type": "STRING",
+          "localized_name": "inpaint_color",
+          "widget": {
+            "name": "inpaint_color"
+          },
+          "slot_index": 9
         }
       ],
       "outputs": [
@@ -312,6 +411,7 @@
           "links": [
             136
           ],
+          "localized_name": "DEPTHFLOW_EFFECTS",
           "slot_index": 0
         }
       ],
@@ -349,14 +449,88 @@
         {
           "name": "feature",
           "type": "FEATURE",
+          "localized_name": "feature",
           "shape": 7,
           "slot_index": 0
         },
         {
           "name": "effects",
           "type": "DEPTHFLOW_EFFECTS",
+          "localized_name": "effects",
           "shape": 7,
           "slot_index": 1
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "localized_name": "strength",
+          "widget": {
+            "name": "strength"
+          },
+          "slot_index": 2
+        },
+        {
+          "name": "feature_threshold",
+          "type": "FLOAT",
+          "localized_name": "feature_threshold",
+          "widget": {
+            "name": "feature_threshold"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "feature_param",
+          "type": "COMBO",
+          "localized_name": "feature_param",
+          "widget": {
+            "name": "feature_param"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "feature_mode",
+          "type": "COMBO",
+          "localized_name": "feature_mode",
+          "widget": {
+            "name": "feature_mode"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "inpaint_enable",
+          "type": "BOOLEAN",
+          "localized_name": "inpaint_enable",
+          "widget": {
+            "name": "inpaint_enable"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "inpaint_black",
+          "type": "BOOLEAN",
+          "localized_name": "inpaint_black",
+          "widget": {
+            "name": "inpaint_black"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "inpaint_limit",
+          "type": "FLOAT",
+          "localized_name": "inpaint_limit",
+          "widget": {
+            "name": "inpaint_limit"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "inpaint_color",
+          "type": "STRING",
+          "localized_name": "inpaint_color",
+          "widget": {
+            "name": "inpaint_color"
+          },
+          "slot_index": 9
         }
       ],
       "outputs": [
@@ -366,6 +540,7 @@
           "links": [
             137
           ],
+          "localized_name": "DEPTHFLOW_EFFECTS",
           "slot_index": 0
         }
       ],
@@ -406,6 +581,7 @@
         {
           "name": "feature",
           "type": "FEATURE",
+          "localized_name": "feature",
           "shape": 7,
           "slot_index": 0
         },
@@ -413,8 +589,108 @@
           "name": "motion",
           "type": "DEPTHFLOW_MOTION",
           "link": 185,
+          "localized_name": "motion",
           "shape": 7,
           "slot_index": 1
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "localized_name": "strength",
+          "widget": {
+            "name": "strength"
+          },
+          "slot_index": 2
+        },
+        {
+          "name": "feature_threshold",
+          "type": "FLOAT",
+          "localized_name": "feature_threshold",
+          "widget": {
+            "name": "feature_threshold"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "feature_param",
+          "type": "COMBO",
+          "localized_name": "feature_param",
+          "widget": {
+            "name": "feature_param"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "feature_mode",
+          "type": "COMBO",
+          "localized_name": "feature_mode",
+          "widget": {
+            "name": "feature_mode"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "target",
+          "type": "COMBO",
+          "localized_name": "target",
+          "widget": {
+            "name": "target"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "amplitude",
+          "type": "FLOAT",
+          "localized_name": "amplitude",
+          "widget": {
+            "name": "amplitude"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "cycles",
+          "type": "FLOAT",
+          "localized_name": "cycles",
+          "widget": {
+            "name": "cycles"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "phase",
+          "type": "FLOAT",
+          "localized_name": "phase",
+          "widget": {
+            "name": "phase"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "reverse",
+          "type": "BOOLEAN",
+          "localized_name": "reverse",
+          "widget": {
+            "name": "reverse"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "bias",
+          "type": "FLOAT",
+          "localized_name": "bias",
+          "widget": {
+            "name": "bias"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "cumulative",
+          "type": "BOOLEAN",
+          "localized_name": "cumulative",
+          "widget": {
+            "name": "cumulative"
+          },
+          "slot_index": 12
         }
       ],
       "outputs": [
@@ -424,6 +700,7 @@
           "links": [
             186
           ],
+          "localized_name": "DEPTHFLOW_MOTION",
           "slot_index": 0
         }
       ],
@@ -471,6 +748,7 @@
         {
           "name": "feature",
           "type": "FEATURE",
+          "localized_name": "feature",
           "shape": 7,
           "slot_index": 0
         },
@@ -478,8 +756,108 @@
           "name": "motion",
           "type": "DEPTHFLOW_MOTION",
           "link": 184,
+          "localized_name": "motion",
           "shape": 7,
           "slot_index": 1
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "localized_name": "strength",
+          "widget": {
+            "name": "strength"
+          },
+          "slot_index": 2
+        },
+        {
+          "name": "feature_threshold",
+          "type": "FLOAT",
+          "localized_name": "feature_threshold",
+          "widget": {
+            "name": "feature_threshold"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "feature_param",
+          "type": "COMBO",
+          "localized_name": "feature_param",
+          "widget": {
+            "name": "feature_param"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "feature_mode",
+          "type": "COMBO",
+          "localized_name": "feature_mode",
+          "widget": {
+            "name": "feature_mode"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "target",
+          "type": "COMBO",
+          "localized_name": "target",
+          "widget": {
+            "name": "target"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "amplitude",
+          "type": "FLOAT",
+          "localized_name": "amplitude",
+          "widget": {
+            "name": "amplitude"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "cycles",
+          "type": "FLOAT",
+          "localized_name": "cycles",
+          "widget": {
+            "name": "cycles"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "phase",
+          "type": "FLOAT",
+          "localized_name": "phase",
+          "widget": {
+            "name": "phase"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "reverse",
+          "type": "BOOLEAN",
+          "localized_name": "reverse",
+          "widget": {
+            "name": "reverse"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "bias",
+          "type": "FLOAT",
+          "localized_name": "bias",
+          "widget": {
+            "name": "bias"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "cumulative",
+          "type": "BOOLEAN",
+          "localized_name": "cumulative",
+          "widget": {
+            "name": "cumulative"
+          },
+          "slot_index": 12
         }
       ],
       "outputs": [
@@ -489,6 +867,7 @@
           "links": [
             185
           ],
+          "localized_name": "DEPTHFLOW_MOTION",
           "slot_index": 0
         }
       ],
@@ -572,8 +951,72 @@
         {
           "name": "feature",
           "type": "FEATURE",
+          "localized_name": "feature",
           "shape": 7,
           "slot_index": 0
+        },
+        {
+          "name": "strength",
+          "type": "FLOAT",
+          "localized_name": "strength",
+          "widget": {
+            "name": "strength"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "feature_threshold",
+          "type": "FLOAT",
+          "localized_name": "feature_threshold",
+          "widget": {
+            "name": "feature_threshold"
+          },
+          "slot_index": 2
+        },
+        {
+          "name": "feature_param",
+          "type": "COMBO",
+          "localized_name": "feature_param",
+          "widget": {
+            "name": "feature_param"
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "feature_mode",
+          "type": "COMBO",
+          "localized_name": "feature_mode",
+          "widget": {
+            "name": "feature_mode"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "intensity",
+          "type": "FLOAT",
+          "localized_name": "intensity",
+          "widget": {
+            "name": "intensity"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "reverse",
+          "type": "BOOLEAN",
+          "localized_name": "reverse",
+          "widget": {
+            "name": "reverse"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "depth",
+          "type": "FLOAT",
+          "localized_name": "depth",
+          "widget": {
+            "name": "depth"
+          },
+          "slot_index": 7
         }
       ],
       "outputs": [
@@ -583,6 +1026,7 @@
           "links": [
             184
           ],
+          "localized_name": "DEPTHFLOW_MOTION",
           "slot_index": 0
         }
       ],
@@ -666,7 +1110,7 @@
         46.0
       ],
       "order": 61,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 1,
@@ -731,7 +1175,7 @@
         60.0
       ],
       "order": 60,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 89,
@@ -803,7 +1247,7 @@
         26.0
       ],
       "order": 31,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 47,
@@ -816,7 +1260,18 @@
           "name": "any",
           "type": "*",
           "link": 209,
+          "localized_name": "any",
           "slot_index": 0
+        },
+        {
+          "name": "round_method",
+          "type": "COMBO",
+          "localized_name": "round_method",
+          "widget": {
+            "name": "round_method"
+          },
+          "shape": 7,
+          "slot_index": 1
         }
       ],
       "outputs": [
@@ -830,6 +1285,7 @@
             120,
             296
           ],
+          "localized_name": "INT",
           "slot_index": 0
         }
       ],
@@ -909,7 +1365,7 @@
         58.0
       ],
       "order": 21,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 42,
@@ -969,7 +1425,7 @@
         280.0
       ],
       "order": 27,
-      "mode": 4,
+      "mode": 0,
       "title": "CLIP Text Encode (Positive Prompt)",
       "color": "#232",
       "bgcolor": "#353"
@@ -1033,7 +1489,7 @@
         60.0
       ],
       "order": 5,
-      "mode": 4,
+      "mode": 0,
       "color": "#322",
       "bgcolor": "#533"
     },
@@ -1098,7 +1554,7 @@
         82.0
       ],
       "order": 6,
-      "mode": 4,
+      "mode": 0,
       "color": "#322",
       "bgcolor": "#533"
     },
@@ -1108,7 +1564,17 @@
       "widgets_values": [
         30
       ],
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "localized_name": "value",
+          "widget": {
+            "name": "value"
+          },
+          "slot_index": 0
+        }
+      ],
       "outputs": [
         {
           "name": "INT",
@@ -1117,6 +1583,7 @@
             47,
             57
           ],
+          "localized_name": "INT",
           "slot_index": 0
         }
       ],
@@ -1270,7 +1737,7 @@
         262.0
       ],
       "order": 59,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 66,
@@ -1291,53 +1758,114 @@
           "name": "image",
           "type": "IMAGE",
           "link": 173,
+          "localized_name": "image",
           "slot_index": 0
         },
         {
           "name": "depth_map",
           "type": "IMAGE",
           "link": 68,
+          "localized_name": "depth_map",
           "slot_index": 1
         },
         {
           "name": "motion",
           "type": "DEPTHFLOW_MOTION",
           "link": 127,
+          "localized_name": "motion",
           "slot_index": 2
         },
         {
           "name": "effects",
           "type": "DEPTHFLOW_EFFECTS",
           "link": 136,
+          "localized_name": "effects",
           "shape": 7,
           "slot_index": 3
+        },
+        {
+          "name": "animation_speed",
+          "type": "FLOAT",
+          "localized_name": "animation_speed",
+          "widget": {
+            "name": "animation_speed"
+          },
+          "slot_index": 4
         },
         {
           "name": "input_fps",
           "type": "FLOAT",
           "link": 208,
+          "localized_name": "input_fps",
           "widget": {
             "name": "input_fps"
           },
-          "slot_index": 4
+          "slot_index": 5
         },
         {
           "name": "output_fps",
           "type": "FLOAT",
           "link": 70,
+          "localized_name": "output_fps",
           "widget": {
             "name": "output_fps"
           },
-          "slot_index": 5
+          "slot_index": 6
         },
         {
           "name": "num_frames",
           "type": "INT",
           "link": 71,
+          "localized_name": "num_frames",
           "widget": {
             "name": "num_frames"
           },
-          "slot_index": 6
+          "slot_index": 7
+        },
+        {
+          "name": "quality",
+          "type": "INT",
+          "localized_name": "quality",
+          "widget": {
+            "name": "quality"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "ssaa",
+          "type": "FLOAT",
+          "localized_name": "ssaa",
+          "widget": {
+            "name": "ssaa"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "invert",
+          "type": "FLOAT",
+          "localized_name": "invert",
+          "widget": {
+            "name": "invert"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "tiling_mode",
+          "type": "COMBO",
+          "localized_name": "tiling_mode",
+          "widget": {
+            "name": "tiling_mode"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "edge_fix",
+          "type": "INT",
+          "localized_name": "edge_fix",
+          "widget": {
+            "name": "edge_fix"
+          },
+          "slot_index": 12
         }
       ],
       "outputs": [
@@ -1348,6 +1876,7 @@
             74,
             237
           ],
+          "localized_name": "IMAGE",
           "slot_index": 0
         }
       ],
@@ -1389,53 +1918,114 @@
           "name": "image",
           "type": "IMAGE",
           "link": 172,
+          "localized_name": "image",
           "slot_index": 0
         },
         {
           "name": "depth_map",
           "type": "IMAGE",
           "link": 59,
+          "localized_name": "depth_map",
           "slot_index": 1
         },
         {
           "name": "motion",
           "type": "DEPTHFLOW_MOTION",
           "link": 126,
+          "localized_name": "motion",
           "slot_index": 2
         },
         {
           "name": "effects",
           "type": "DEPTHFLOW_EFFECTS",
           "link": 137,
+          "localized_name": "effects",
           "shape": 7,
           "slot_index": 3
+        },
+        {
+          "name": "animation_speed",
+          "type": "FLOAT",
+          "localized_name": "animation_speed",
+          "widget": {
+            "name": "animation_speed"
+          },
+          "slot_index": 4
         },
         {
           "name": "input_fps",
           "type": "FLOAT",
           "link": 207,
+          "localized_name": "input_fps",
           "widget": {
             "name": "input_fps"
           },
-          "slot_index": 4
+          "slot_index": 5
         },
         {
           "name": "output_fps",
           "type": "FLOAT",
           "link": 61,
+          "localized_name": "output_fps",
           "widget": {
             "name": "output_fps"
           },
-          "slot_index": 5
+          "slot_index": 6
         },
         {
           "name": "num_frames",
           "type": "INT",
           "link": 62,
+          "localized_name": "num_frames",
           "widget": {
             "name": "num_frames"
           },
-          "slot_index": 6
+          "slot_index": 7
+        },
+        {
+          "name": "quality",
+          "type": "INT",
+          "localized_name": "quality",
+          "widget": {
+            "name": "quality"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "ssaa",
+          "type": "FLOAT",
+          "localized_name": "ssaa",
+          "widget": {
+            "name": "ssaa"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "invert",
+          "type": "FLOAT",
+          "localized_name": "invert",
+          "widget": {
+            "name": "invert"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "tiling_mode",
+          "type": "COMBO",
+          "localized_name": "tiling_mode",
+          "widget": {
+            "name": "tiling_mode"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "edge_fix",
+          "type": "INT",
+          "localized_name": "edge_fix",
+          "widget": {
+            "name": "edge_fix"
+          },
+          "slot_index": 12
         }
       ],
       "outputs": [
@@ -1446,6 +2036,7 @@
             65,
             82
           ],
+          "localized_name": "IMAGE",
           "slot_index": 0
         }
       ],
@@ -1477,6 +2068,7 @@
           "name": "any",
           "type": "*",
           "link": 47,
+          "localized_name": "any",
           "slot_index": 0
         }
       ],
@@ -1496,6 +2088,7 @@
             295,
             298
           ],
+          "localized_name": "FLOAT",
           "slot_index": 0
         }
       ],
@@ -1705,52 +2298,113 @@
           "name": "image",
           "type": "IMAGE",
           "link": 290,
+          "localized_name": "image",
           "slot_index": 0
         },
         {
           "name": "depth_map",
           "type": "IMAGE",
           "link": 291,
+          "localized_name": "depth_map",
           "slot_index": 1
         },
         {
           "name": "motion",
           "type": "DEPTHFLOW_MOTION",
           "link": 292,
+          "localized_name": "motion",
           "slot_index": 2
         },
         {
           "name": "effects",
           "type": "DEPTHFLOW_EFFECTS",
+          "localized_name": "effects",
           "shape": 7,
           "slot_index": 3
+        },
+        {
+          "name": "animation_speed",
+          "type": "FLOAT",
+          "localized_name": "animation_speed",
+          "widget": {
+            "name": "animation_speed"
+          },
+          "slot_index": 4
         },
         {
           "name": "input_fps",
           "type": "FLOAT",
           "link": 294,
+          "localized_name": "input_fps",
           "widget": {
             "name": "input_fps"
           },
-          "slot_index": 4
+          "slot_index": 5
         },
         {
           "name": "output_fps",
           "type": "FLOAT",
           "link": 295,
+          "localized_name": "output_fps",
           "widget": {
             "name": "output_fps"
           },
-          "slot_index": 5
+          "slot_index": 6
         },
         {
           "name": "num_frames",
           "type": "INT",
           "link": 296,
+          "localized_name": "num_frames",
           "widget": {
             "name": "num_frames"
           },
-          "slot_index": 6
+          "slot_index": 7
+        },
+        {
+          "name": "quality",
+          "type": "INT",
+          "localized_name": "quality",
+          "widget": {
+            "name": "quality"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "ssaa",
+          "type": "FLOAT",
+          "localized_name": "ssaa",
+          "widget": {
+            "name": "ssaa"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "invert",
+          "type": "FLOAT",
+          "localized_name": "invert",
+          "widget": {
+            "name": "invert"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "tiling_mode",
+          "type": "COMBO",
+          "localized_name": "tiling_mode",
+          "widget": {
+            "name": "tiling_mode"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "edge_fix",
+          "type": "INT",
+          "localized_name": "edge_fix",
+          "widget": {
+            "name": "edge_fix"
+          },
+          "slot_index": 12
         }
       ],
       "outputs": [
@@ -1760,6 +2414,7 @@
           "links": [
             297
           ],
+          "localized_name": "IMAGE",
           "slot_index": 0
         }
       ],
@@ -1788,7 +2443,17 @@
       "widgets_values": [
         1.5000000000000004
       ],
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "localized_name": "value",
+          "widget": {
+            "name": "value"
+          },
+          "slot_index": 0
+        }
+      ],
       "outputs": [
         {
           "name": "FLOAT",
@@ -1796,6 +2461,7 @@
           "links": [
             56
           ],
+          "localized_name": "FLOAT",
           "slot_index": 0
         }
       ],
@@ -1838,7 +2504,7 @@
         158.5415802001953
       ],
       "order": 10,
-      "mode": 4,
+      "mode": 0,
       "title": "KSampler Setting",
       "color": "#432",
       "bgcolor": "#653"
@@ -1877,23 +2543,27 @@
           "name": "images",
           "type": "IMAGE",
           "link": 297,
+          "localized_name": "images",
           "slot_index": 0
         },
         {
           "name": "audio",
           "type": "AUDIO",
+          "localized_name": "audio",
           "shape": 7,
           "slot_index": 1
         },
         {
           "name": "meta_batch",
           "type": "VHS_BatchManager",
+          "localized_name": "meta_batch",
           "shape": 7,
           "slot_index": 2
         },
         {
           "name": "vae",
           "type": "VAE",
+          "localized_name": "vae",
           "shape": 7,
           "slot_index": 3
         },
@@ -1901,16 +2571,98 @@
           "name": "frame_rate",
           "type": "FLOAT",
           "link": 298,
+          "localized_name": "frame_rate",
           "widget": {
             "name": "frame_rate"
           },
           "slot_index": 4
+        },
+        {
+          "name": "loop_count",
+          "type": "INT",
+          "localized_name": "loop_count",
+          "widget": {
+            "name": "loop_count"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "localized_name": "filename_prefix",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "format",
+          "type": "COMBO",
+          "localized_name": "format",
+          "widget": {
+            "name": "format"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "pingpong",
+          "type": "BOOLEAN",
+          "localized_name": "pingpong",
+          "widget": {
+            "name": "pingpong"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "save_output",
+          "type": "BOOLEAN",
+          "localized_name": "save_output",
+          "widget": {
+            "name": "save_output"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "pix_fmt",
+          "type": [
+            "yuv420p",
+            "yuv420p10le"
+          ],
+          "widget": {
+            "name": "pix_fmt"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "crf",
+          "type": "INT",
+          "widget": {
+            "name": "crf"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "save_metadata",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_metadata"
+          },
+          "slot_index": 12
+        },
+        {
+          "name": "trim_to_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "trim_to_audio"
+          },
+          "slot_index": 13
         }
       ],
       "outputs": [
         {
           "name": "Filenames",
           "type": "VHS_FILENAMES",
+          "localized_name": "Filenames",
           "slot_index": 0
         }
       ],
@@ -1932,7 +2684,7 @@
       ],
       "size": [
         399.3619384765625,
-        917.0429077148438
+        334.0
       ],
       "order": 56,
       "mode": 0,
@@ -1974,23 +2726,27 @@
           "name": "images",
           "type": "IMAGE",
           "link": 74,
+          "localized_name": "images",
           "slot_index": 0
         },
         {
           "name": "audio",
           "type": "AUDIO",
+          "localized_name": "audio",
           "shape": 7,
           "slot_index": 1
         },
         {
           "name": "meta_batch",
           "type": "VHS_BatchManager",
+          "localized_name": "meta_batch",
           "shape": 7,
           "slot_index": 2
         },
         {
           "name": "vae",
           "type": "VAE",
+          "localized_name": "vae",
           "shape": 7,
           "slot_index": 3
         },
@@ -1998,16 +2754,98 @@
           "name": "frame_rate",
           "type": "FLOAT",
           "link": 73,
+          "localized_name": "frame_rate",
           "widget": {
             "name": "frame_rate"
           },
           "slot_index": 4
+        },
+        {
+          "name": "loop_count",
+          "type": "INT",
+          "localized_name": "loop_count",
+          "widget": {
+            "name": "loop_count"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "localized_name": "filename_prefix",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "format",
+          "type": "COMBO",
+          "localized_name": "format",
+          "widget": {
+            "name": "format"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "pingpong",
+          "type": "BOOLEAN",
+          "localized_name": "pingpong",
+          "widget": {
+            "name": "pingpong"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "save_output",
+          "type": "BOOLEAN",
+          "localized_name": "save_output",
+          "widget": {
+            "name": "save_output"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "pix_fmt",
+          "type": [
+            "yuv420p",
+            "yuv420p10le"
+          ],
+          "widget": {
+            "name": "pix_fmt"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "crf",
+          "type": "INT",
+          "widget": {
+            "name": "crf"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "save_metadata",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_metadata"
+          },
+          "slot_index": 12
+        },
+        {
+          "name": "trim_to_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "trim_to_audio"
+          },
+          "slot_index": 13
         }
       ],
       "outputs": [
         {
           "name": "Filenames",
           "type": "VHS_FILENAMES",
+          "localized_name": "Filenames",
           "slot_index": 0
         }
       ],
@@ -2029,7 +2867,7 @@
       ],
       "size": [
         392.80694580078125,
-        907.21044921875
+        334.0
       ],
       "order": 54,
       "mode": 0,
@@ -2207,7 +3045,7 @@
         254.0
       ],
       "order": 58,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 65,
@@ -2243,23 +3081,27 @@
           "name": "images",
           "type": "IMAGE",
           "link": 65,
+          "localized_name": "images",
           "slot_index": 0
         },
         {
           "name": "audio",
           "type": "AUDIO",
+          "localized_name": "audio",
           "shape": 7,
           "slot_index": 1
         },
         {
           "name": "meta_batch",
           "type": "VHS_BatchManager",
+          "localized_name": "meta_batch",
           "shape": 7,
           "slot_index": 2
         },
         {
           "name": "vae",
           "type": "VAE",
+          "localized_name": "vae",
           "shape": 7,
           "slot_index": 3
         },
@@ -2267,16 +3109,98 @@
           "name": "frame_rate",
           "type": "FLOAT",
           "link": 66,
+          "localized_name": "frame_rate",
           "widget": {
             "name": "frame_rate"
           },
           "slot_index": 4
+        },
+        {
+          "name": "loop_count",
+          "type": "INT",
+          "localized_name": "loop_count",
+          "widget": {
+            "name": "loop_count"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "localized_name": "filename_prefix",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "format",
+          "type": "COMBO",
+          "localized_name": "format",
+          "widget": {
+            "name": "format"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "pingpong",
+          "type": "BOOLEAN",
+          "localized_name": "pingpong",
+          "widget": {
+            "name": "pingpong"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "save_output",
+          "type": "BOOLEAN",
+          "localized_name": "save_output",
+          "widget": {
+            "name": "save_output"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "pix_fmt",
+          "type": [
+            "yuv420p",
+            "yuv420p10le"
+          ],
+          "widget": {
+            "name": "pix_fmt"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "crf",
+          "type": "INT",
+          "widget": {
+            "name": "crf"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "save_metadata",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_metadata"
+          },
+          "slot_index": 12
+        },
+        {
+          "name": "trim_to_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "trim_to_audio"
+          },
+          "slot_index": 13
         }
       ],
       "outputs": [
         {
           "name": "Filenames",
           "type": "VHS_FILENAMES",
+          "localized_name": "Filenames",
           "slot_index": 0
         }
       ],
@@ -2298,7 +3222,7 @@
       ],
       "size": [
         399.3619384765625,
-        917.0429077148438
+        334.0
       ],
       "order": 52,
       "mode": 0,
@@ -2378,12 +3302,14 @@
           "name": "image",
           "type": "IMAGE",
           "link": 227,
+          "localized_name": "image",
           "slot_index": 0
         },
         {
           "name": "generation_width",
           "type": "INT",
           "link": 283,
+          "localized_name": "generation_width",
           "widget": {
             "name": "generation_width"
           },
@@ -2393,10 +3319,20 @@
           "name": "generation_height",
           "type": "INT",
           "link": 284,
+          "localized_name": "generation_height",
           "widget": {
             "name": "generation_height"
           },
           "slot_index": 2
+        },
+        {
+          "name": "aspect_ratio_preservation",
+          "type": "COMBO",
+          "localized_name": "aspect_ratio_preservation",
+          "widget": {
+            "name": "aspect_ratio_preservation"
+          },
+          "slot_index": 3
         }
       ],
       "outputs": [
@@ -2406,6 +3342,7 @@
           "links": [
             228
           ],
+          "localized_name": "image",
           "slot_index": 0
         },
         {
@@ -2415,6 +3352,7 @@
             285,
             312
           ],
+          "localized_name": "width",
           "slot_index": 1
         },
         {
@@ -2424,6 +3362,7 @@
             286,
             313
           ],
+          "localized_name": "height",
           "slot_index": 2
         }
       ],
@@ -2869,25 +3808,55 @@
           "name": "image",
           "type": "IMAGE",
           "link": 310,
+          "localized_name": "image",
           "slot_index": 0
+        },
+        {
+          "name": "measurement",
+          "type": "COMBO",
+          "localized_name": "measurement",
+          "widget": {
+            "name": "measurement"
+          },
+          "slot_index": 1
         },
         {
           "name": "width",
           "type": "INT",
           "link": 316,
+          "localized_name": "width",
           "widget": {
             "name": "width"
           },
-          "slot_index": 1
+          "slot_index": 2
         },
         {
           "name": "height",
           "type": "INT",
           "link": 317,
+          "localized_name": "height",
           "widget": {
             "name": "height"
           },
-          "slot_index": 2
+          "slot_index": 3
+        },
+        {
+          "name": "fit",
+          "type": "COMBO",
+          "localized_name": "fit",
+          "widget": {
+            "name": "fit"
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "method",
+          "type": "COMBO",
+          "localized_name": "method",
+          "widget": {
+            "name": "method"
+          },
+          "slot_index": 5
         }
       ],
       "outputs": [
@@ -2897,18 +3866,21 @@
           "links": [
             311
           ],
+          "localized_name": "IMAGE",
           "slot_index": 0
         },
         {
           "name": "WIDTH",
           "type": "INT",
           "links": [],
+          "localized_name": "WIDTH",
           "slot_index": 1
         },
         {
           "name": "HEIGHT",
           "type": "INT",
           "links": [],
+          "localized_name": "HEIGHT",
           "slot_index": 2
         }
       ],
@@ -3086,7 +4058,7 @@
         26.0
       ],
       "order": 14,
-      "mode": 4,
+      "mode": 0,
       "title": ".",
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -3129,7 +4101,7 @@
         -26.02309799194336
       ],
       "size": [
-        186.94784545898438,
+        186.9478515625,
         78.0
       ],
       "order": 24,
@@ -3171,23 +4143,27 @@
           "name": "images",
           "type": "IMAGE",
           "link": 81,
+          "localized_name": "images",
           "slot_index": 0
         },
         {
           "name": "audio",
           "type": "AUDIO",
+          "localized_name": "audio",
           "shape": 7,
           "slot_index": 1
         },
         {
           "name": "meta_batch",
           "type": "VHS_BatchManager",
+          "localized_name": "meta_batch",
           "shape": 7,
           "slot_index": 2
         },
         {
           "name": "vae",
           "type": "VAE",
+          "localized_name": "vae",
           "shape": 7,
           "slot_index": 3
         },
@@ -3195,16 +4171,98 @@
           "name": "frame_rate",
           "type": "FLOAT",
           "link": 261,
+          "localized_name": "frame_rate",
           "widget": {
             "name": "frame_rate"
           },
           "slot_index": 4
+        },
+        {
+          "name": "loop_count",
+          "type": "INT",
+          "localized_name": "loop_count",
+          "widget": {
+            "name": "loop_count"
+          },
+          "slot_index": 5
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "localized_name": "filename_prefix",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "format",
+          "type": "COMBO",
+          "localized_name": "format",
+          "widget": {
+            "name": "format"
+          },
+          "slot_index": 7
+        },
+        {
+          "name": "pingpong",
+          "type": "BOOLEAN",
+          "localized_name": "pingpong",
+          "widget": {
+            "name": "pingpong"
+          },
+          "slot_index": 8
+        },
+        {
+          "name": "save_output",
+          "type": "BOOLEAN",
+          "localized_name": "save_output",
+          "widget": {
+            "name": "save_output"
+          },
+          "slot_index": 9
+        },
+        {
+          "name": "pix_fmt",
+          "type": [
+            "yuv420p",
+            "yuv420p10le"
+          ],
+          "widget": {
+            "name": "pix_fmt"
+          },
+          "slot_index": 10
+        },
+        {
+          "name": "crf",
+          "type": "INT",
+          "widget": {
+            "name": "crf"
+          },
+          "slot_index": 11
+        },
+        {
+          "name": "save_metadata",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_metadata"
+          },
+          "slot_index": 12
+        },
+        {
+          "name": "trim_to_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "trim_to_audio"
+          },
+          "slot_index": 13
         }
       ],
       "outputs": [
         {
           "name": "Filenames",
           "type": "VHS_FILENAMES",
+          "localized_name": "Filenames",
           "slot_index": 0
         }
       ],
@@ -3226,10 +4284,10 @@
       ],
       "size": [
         532.9441528320312,
-        1117.416259765625
+        334.0
       ],
       "order": 62,
-      "mode": 4,
+      "mode": 0,
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
@@ -3314,7 +4372,7 @@
         106.0
       ],
       "order": 15,
-      "mode": 4,
+      "mode": 0,
       "color": "#322",
       "bgcolor": "#533"
     },
@@ -3409,7 +4467,7 @@
         126.0
       ],
       "order": 26,
-      "mode": 4,
+      "mode": 0,
       "color": "#322",
       "bgcolor": "#533"
     },
@@ -3432,7 +4490,7 @@
         140.0
       ],
       "order": 16,
-      "mode": 4,
+      "mode": 0,
       "title": "About CausVid LoRA",
       "color": "#432",
       "bgcolor": "#653"
@@ -3476,7 +4534,7 @@
         26.0
       ],
       "order": 39,
-      "mode": 4
+      "mode": 0
     },
     {
       "id": 24,
@@ -3499,7 +4557,7 @@
         502.852783203125
       ],
       "order": 17,
-      "mode": 4,
+      "mode": 0,
       "color": "#432",
       "bgcolor": "#653"
     },
@@ -3509,7 +4567,17 @@
       "widgets_values": [
         480
       ],
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "localized_name": "value",
+          "widget": {
+            "name": "value"
+          },
+          "slot_index": 0
+        }
+      ],
       "outputs": [
         {
           "name": "INT",
@@ -3518,6 +4586,7 @@
             283,
             284
           ],
+          "localized_name": "INT",
           "slot_index": 0
         }
       ],
@@ -3540,6 +4609,29 @@
       "title": "Max Dimension Size",
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 63,
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "# Depthflow Inpainting with VACE\n\nDepthflow README: [github repo](https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes)\n\n---\n\n## Credits:\n\n[Workflow & Depthflow Nodes](https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes): Akatz\n\n[Depthflow](https://github.com/BrokenSource/DepthFlow): Tremeschin\n\n\u2b50 If you found value in this workflow please consider supporting the creators! \u2b50\n\nAkatz [Patreon](https://patreon.com/Akatz?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink) [KoFi](https://ko-fi.com/akatz) [GitHub](https://github.com/sponsors/akatz-ai)\n\nTremeschin [GitHub](https://github.com/sponsors/Tremeschin) [Patreon](https://www.patreon.com/Tremeschin)\n\n--- \n\n## How to generate Depthflow Image Animation:\n\n\n#### 1. Upload an image in the \"Input Image\" group.\n\n#### 2. Set your desired video length in seconds\n\n#### 3. Adjust the Output FPS (if desired)\n\n#### 4. Set the \"Max Dimension Size\". Note that the width or height may end up larger than this number to satisfy the closest viable WAN resolution.\n\n#### 5. You can mix/match different \"Depthflow Motion\" group nodes to achieve various motion effects. See the [Depthflow Showcase](https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes/tree/main/example_workflows) example workflow to get an idea of the various effects. You can adjust the intensity values to get stronger motion.\n\n#### 6. (Optional) Tweak the \"edge_fix\" values if there is artifacting around the edges of objects.\n\n#### 7. Generate\n\n---\n\n\n## How to Inpaint with VACE:\n\n#### 1. Un-bypass the VACE Wan2.1 Inpainting group\n\n#### 2. (Optional) Un-bypass the \"reference image\" group and upload a reference image with the main subject removed for best results.\n\n#### 3. Adjust the Prompts, LoRA strength, and step count if desired.\n\n#### 4. Generate\n\n---\n\n## Support Discord:\n\n[ComfyDock by Akatz](https://discord.gg/2h5rSTeh6Y)"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "flags": {},
+      "pos": [
+        -3491.79296875,
+        -128.80288696289062
+      ],
+      "size": [
+        576.8676147460938,
+        717.4005126953125
+      ],
+      "order": 19,
+      "mode": 0,
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 186,
@@ -3579,36 +4671,13 @@
         -510.0
       ],
       "size": [
-        186.94784545898438,
+        186.9478515625,
         78.0
       ],
       "order": 25,
-      "mode": 4,
+      "mode": 0,
       "color": "#222",
       "bgcolor": "#000"
-    },
-    {
-      "id": 63,
-      "type": "MarkdownNote",
-      "widgets_values": [
-        "# Depthflow Inpainting with VACE\n\nDepthflow README: [github repo](https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes)\n\n---\n\n## Credits:\n\n[Workflow & Depthflow Nodes](https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes): Akatz\n\n[Depthflow](https://github.com/BrokenSource/DepthFlow): Tremeschin\n\n\u2b50 If you found value in this workflow please consider supporting the creators! \u2b50\n\nAkatz [Patreon](https://patreon.com/Akatz?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink) [KoFi](https://ko-fi.com/akatz) [GitHub](https://github.com/sponsors/akatz-ai)\n\nTremeschin [GitHub](https://github.com/sponsors/Tremeschin) [Patreon](https://www.patreon.com/Tremeschin)\n\n--- \n\n## How to generate Depthflow Image Animation:\n\n\n#### 1. Upload an image in the \"Input Image\" group.\n\n#### 2. Set your desired video length in seconds\n\n#### 3. Adjust the Output FPS (if desired)\n\n#### 4. Set the \"Max Dimension Size\". Note that the width or height may end up larger than this number to satisfy the closest viable WAN resolution.\n\n#### 5. You can mix/match different \"Depthflow Motion\" group nodes to achieve various motion effects. See the [Depthflow Showcase](https://github.com/akatz-ai/ComfyUI-Depthflow-Nodes/tree/main/example_workflows) example workflow to get an idea of the various effects. You can adjust the intensity values to get stronger motion.\n\n#### 6. (Optional) Tweak the \"edge_fix\" values if there is artifacting around the edges of objects.\n\n#### 7. Generate\n\n---\n\n\n## How to Inpaint with VACE:\n\n#### 1. Un-bypass the VACE Wan2.1 Inpainting group\n\n#### 2. (Optional) Un-bypass the \"reference image\" group and upload a reference image with the main subject removed for best results.\n\n#### 3. Adjust the Prompts, LoRA strength, and step count if desired.\n\n#### 4. Generate\n\n---\n\n## Support Discord:\n\n[ComfyDock by Akatz](https://discord.gg/2h5rSTeh6Y)"
-      ],
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "flags": {},
-      "pos": [
-        -3491.79296875,
-        -128.80288696289062
-      ],
-      "size": [
-        576.8676147460938,
-        717.4005126953125
-      ],
-      "order": 19,
-      "mode": 0,
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -3761,7 +4830,7 @@
       49,
       0,
       60,
-      5,
+      6,
       "FLOAT"
     ],
     [
@@ -3769,7 +4838,7 @@
       47,
       0,
       60,
-      6,
+      7,
       "INT"
     ],
     [
@@ -3801,7 +4870,7 @@
       49,
       0,
       66,
-      5,
+      6,
       "FLOAT"
     ],
     [
@@ -3809,7 +4878,7 @@
       47,
       0,
       66,
-      6,
+      7,
       "INT"
     ],
     [
@@ -3985,7 +5054,7 @@
       49,
       0,
       60,
-      4,
+      5,
       "FLOAT"
     ],
     [
@@ -3993,7 +5062,7 @@
       49,
       0,
       66,
-      4,
+      5,
       "FLOAT"
     ],
     [
@@ -4137,7 +5206,7 @@
       49,
       0,
       169,
-      4,
+      5,
       "FLOAT"
     ],
     [
@@ -4145,7 +5214,7 @@
       49,
       0,
       169,
-      5,
+      6,
       "FLOAT"
     ],
     [
@@ -4153,7 +5222,7 @@
       47,
       0,
       169,
-      6,
+      7,
       "INT"
     ],
     [
@@ -4233,7 +5302,7 @@
       176,
       0,
       78,
-      1,
+      2,
       "INT"
     ],
     [
@@ -4241,7 +5310,7 @@
       177,
       0,
       78,
-      2,
+      3,
       "INT"
     ],
     [
@@ -4506,10 +5575,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6409624716091064,
+      "scale": 0.7050587187700171,
       "offset": [
-        3087.1470918724804,
-        694.8808227527894
+        133.6114827108779,
+        827.3277936970927
       ]
     },
     "frontendVersion": "1.23.4",
