@@ -91,7 +91,7 @@ path = "workflows/DepthflowInpaintWithVACE_v1.json"
 [[tool.comfydock.workflows.DepthflowInpaintWithVACE_v1.models]]
 filename = "depth_anything_v2_vitl_fp32.safetensors"
 category = "unknown"
-criticality = "required"
+criticality = "optional"
 status = "resolved"
 nodes = [{node_id = "43", node_type = "DownloadAndLoadDepthAnythingV2Model", widget_idx = 0, widget_value = "depth_anything_v2_vitl_fp32.safetensors"}]
 hash = "54d0b2c7072d6582"
@@ -99,7 +99,7 @@ hash = "54d0b2c7072d6582"
 [[tool.comfydock.workflows.DepthflowInpaintWithVACE_v1.models]]
 filename = "wan_2.1_vae.safetensors"
 category = "vae"
-criticality = "flexible"
+criticality = "required"
 status = "resolved"
 nodes = [{node_id = "27", node_type = "VAELoader", widget_idx = 0, widget_value = "wan_2.1_vae.safetensors"}]
 hash = "37b9621f028a9f5a"
@@ -107,7 +107,7 @@ hash = "37b9621f028a9f5a"
 [[tool.comfydock.workflows.DepthflowInpaintWithVACE_v1.models]]
 filename = "wan2.1_vace_1.3B_fp16.safetensors"
 category = "diffusion_models"
-criticality = "required"
+criticality = "flexible"
 status = "resolved"
 nodes = [{node_id = "23", node_type = "UNETLoader", widget_idx = 0, widget_value = "WanVideo/wan2.1_vace_1.3B_fp16.safetensors"}]
 hash = "09bca1a92db2b9b6"
@@ -123,7 +123,7 @@ hash = "05c15b2f1f9a5f21"
 [[tool.comfydock.workflows.DepthflowInpaintWithVACE_v1.models]]
 filename = "Wan21_CausVid_bidirect2_T2V_1_3B_lora_rank32.safetensors"
 category = "loras"
-criticality = "flexible"
+criticality = "required"
 status = "resolved"
 nodes = [{node_id = "18", node_type = "LoraLoader", widget_idx = 0, widget_value = "WAN/Wan21_CausVid_bidirect2_T2V_1_3B_lora_rank32.safetensors"}]
 hash = "2e0b4fdfd6fbdce4"
