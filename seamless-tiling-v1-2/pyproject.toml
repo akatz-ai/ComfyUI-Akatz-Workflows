@@ -1,0 +1,254 @@
+[project]
+name = "comfydock-env-seamless-tiling-v1-2"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.11.8",
+    "alembic",
+    "av>=14.2.0",
+    "comfyui-embedded-docs==0.3.0",
+    "comfyui-frontend-package==1.28.7",
+    "comfyui-workflow-templates==0.2.1",
+    "einops",
+    "kornia>=0.7.1",
+    "numpy>=1.25.0",
+    "pillow",
+    "psutil",
+    "pydantic~=2.0",
+    "pydantic-settings~=2.0",
+    "pyyaml",
+    "safetensors>=0.4.2",
+    "scipy",
+    "sentencepiece",
+    "spandrel",
+    "sqlalchemy",
+    "tokenizers>=0.13.3",
+    "torch",
+    "torchaudio",
+    "torchsde",
+    "torchvision",
+    "tqdm",
+    "transformers>=4.37.2",
+    "yarl>=1.18.0",
+]
+
+[tool.comfydock]
+comfyui_version = "v0.3.66"
+python_version = "3.12"
+
+[tool.comfydock.nodes.comfyui-videohelpersuite]
+name = "ComfyUI-VideoHelperSuite"
+registry_id = "comfyui-videohelpersuite"
+repository = "https://github.com/kosinkadink/comfyui-videohelpersuite"
+version = "1.7.7"
+download_url = "https://cdn.comfy.org/kosinkadink/comfyui-videohelpersuite/1.7.7/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.ComfyMath]
+name = "ComfyMath"
+registry_id = "ComfyMath"
+repository = "https://github.com/evanspearman/comfymath"
+source = "git"
+
+[tool.comfydock.nodes.masquerade-nodes-comfyui]
+name = "Masquerade Nodes"
+registry_id = "masquerade-nodes-comfyui"
+repository = "https://github.com/badcafecode/masquerade-nodes-comfyui"
+source = "git"
+
+[tool.comfydock.nodes.comfyui-depthflow-nodes]
+name = "ComfyUI-Depthflow-Nodes"
+registry_id = "comfyui-depthflow-nodes"
+repository = "https://github.com/akatz-ai/comfyui-depthflow-nodes"
+version = "1.2.2"
+download_url = "https://cdn.comfy.org/akatz/comfyui-depthflow-nodes/1.2.2/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-depthanythingv2]
+name = "ComfyUI-DepthAnythingV2"
+registry_id = "comfyui-depthanythingv2"
+repository = "https://github.com/kijai/comfyui-depthanythingv2"
+version = "1.0.1"
+download_url = "https://cdn.comfy.org/kijai/comfyui-depthanythingv2/1.0.1/node.tar.gz"
+source = "registry"
+
+[tool.comfydock.nodes.ComfyLiterals]
+name = "ComfyLiterals"
+registry_id = "ComfyLiterals"
+repository = "https://github.com/m1kep/comfyliterals"
+source = "git"
+
+[tool.comfydock.nodes.comfy-mtb]
+name = "comfy-mtb"
+registry_id = "comfy-mtb"
+repository = "https://github.com/melmass/comfy_mtb"
+version = "0.5.4"
+download_url = "https://cdn.comfy.org/mel/comfy-mtb/0.5.4/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-seamless-tiling]
+name = "ComfyUI-seamless-tiling"
+registry_id = "comfyui-seamless-tiling"
+repository = "https://github.com/spinagon/comfyui-seamless-tiling"
+version = "1.0.0"
+download_url = "https://cdn.comfy.org/spinagon/comfyui-seamless-tiling/1.0.0/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.mikey_nodes]
+name = "mikey_nodes"
+registry_id = "mikey_nodes"
+repository = "https://github.com/bash-j/mikey_nodes"
+version = "1.0.4"
+download_url = "https://cdn.comfy.org/humblemikey/mikey_nodes/1.0.4/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.rgthree-comfy]
+name = "rgthree-comfy"
+registry_id = "rgthree-comfy"
+repository = "https://github.com/rgthree/rgthree-comfy"
+version = "1.0.2509092031"
+download_url = "https://cdn.comfy.org/rgthree/rgthree-comfy/1.0.2509092031/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-kjnodes]
+name = "ComfyUI-KJNodes"
+registry_id = "comfyui-kjnodes"
+repository = "https://github.com/kijai/comfyui-kjnodes"
+version = "1.1.6"
+download_url = "https://cdn.comfy.org/kijai/comfyui-kjnodes/1.1.6/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.ComfyUI-Crystools]
+name = "ComfyUI-Crystools"
+registry_id = "ComfyUI-Crystools"
+repository = "https://github.com/crystian/comfyui-crystools"
+version = "1.27.3"
+download_url = "https://cdn.comfy.org/crystian/ComfyUI-Crystools/1.27.3/node.zip"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-akatz-nodes]
+name = "ComfyUI-AKatz-Nodes"
+registry_id = "comfyui-akatz-nodes"
+repository = "https://github.com/akatz-ai/comfyui-akatz-nodes"
+version = "1.9.2"
+download_url = "https://cdn.comfy.org/akatz/comfyui-akatz-nodes/1.9.2/node.tar.gz"
+source = "registry"
+
+[tool.comfydock.nodes.comfyui-basic-math]
+name = "ComfyUI-Basic-Math"
+registry_id = "comfyui-basic-math"
+repository = "https://github.com/akatz-ai/comfyui-basic-math"
+version = "0.0.6"
+download_url = "https://cdn.comfy.org/akatz/comfyui-basic-math/0.0.6/node.zip"
+source = "registry"
+
+[tool.comfydock.workflows.seamless_tiling_workflow_v1_2]
+nodes = ["ComfyLiterals", "ComfyUI-Crystools", "comfy-mtb", "comfyui-akatz-nodes", "comfyui-basic-math", "comfyui-depthanythingv2", "comfyui-depthflow-nodes", "comfyui-kjnodes", "comfyui-seamless-tiling", "comfyui-videohelpersuite", "mikey_nodes", "rgthree-comfy"]
+path = "workflows/seamless_tiling_workflow_v1_2.json"
+
+[[tool.comfydock.workflows.seamless_tiling_workflow_v1_2.models]]
+filename = "depth_anything_v2_vitl_fp32.safetensors"
+category = "unknown"
+criticality = "required"
+status = "resolved"
+nodes = [{node_id = "48", node_type = "DownloadAndLoadDepthAnythingV2Model", widget_idx = 0, widget_value = "depth_anything_v2_vitl_fp32.safetensors"}]
+hash = "54d0b2c7072d6582"
+
+[[tool.comfydock.workflows.seamless_tiling_workflow_v1_2.models]]
+filename = "zavychromaxl_v90.safetensors"
+category = "checkpoints"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "1", node_type = "CheckpointLoaderSimple", widget_idx = 0, widget_value = "SDXL/zavychromaxl_v90.safetensors"}]
+hash = "f4f126a52d437c6d"
+
+[[tool.comfydock.workflows.seamless_tiling_workflow_v1_2.models]]
+filename = "TileMapStyle_v1.safetensors"
+category = "loras"
+criticality = "flexible"
+status = "resolved"
+nodes = [{node_id = "13", node_type = "LoraLoader", widget_idx = 0, widget_value = "SDXL/TileMapStyle_v1.safetensors"}]
+hash = "822c658b2463eeb4"
+
+[tool.comfydock.workflows.seamless_tiling_workflow_v1_2.custom_node_map]
+SetNode = "comfyui-kjnodes"
+"Note Plus (mtb)" = "comfy-mtb"
+"Seed (rgthree)" = "rgthree-comfy"
+
+[tool.comfydock.models]
+54d0b2c7072d6582 = {filename = "depth_anything_v2_vitl_fp32.safetensors", size = 1341306404, relative_path = "depthanything/depth_anything_v2_vitl_fp32.safetensors", category = "unknown"}
+f4f126a52d437c6d = {filename = "zavychromaxl_v90.safetensors", size = 6938042042, relative_path = "checkpoints/SDXL/zavychromaxl_v90.safetensors", category = "checkpoints"}
+822c658b2463eeb4 = {filename = "TileMapStyle_v1.safetensors", size = 85426676, relative_path = "loras/SDXL/TileMapStyle_v1.safetensors", category = "loras"}
+
+[tool.uv]
+constraint-dependencies = ["torch==2.9.0+cu129", "torchvision==0.24.0+cu129", "torchaudio==2.9.0+cu129"]
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
+
+[tool.uv.sources.torch]
+index = "pytorch-cu129"
+
+[tool.uv.sources.torchvision]
+index = "pytorch-cu129"
+
+[tool.uv.sources.torchaudio]
+index = "pytorch-cu129"
+
+[dependency-groups]
+comfy-mtb-9bb64296 = [
+    "cachetools",
+    "imageio-ffmpeg",
+    "matplotlib",
+    "onnxruntime-gpu",
+    "pillow",
+    "qrcode[pil]",
+    "rembg",
+    "requirements-parser",
+    "rich",
+    "rich-argparse",
+    "transformers",
+]
+comfymath-00c1c7f3 = [
+    "numpy",
+]
+comfyui-akatz-nodes-09833f33 = [
+    "numpy",
+    "opencv-python",
+    "pydub",
+    "torch",
+]
+comfyui-crystools-d8d097ab = [
+    "deepdiff",
+    "jetson-stats ; platform_machine == 'aarch64'",
+    "numpy",
+    "piexif",
+    "pillow>=9.5.0",
+    "py-cpuinfo",
+    "pynvml ; platform_machine != 'aarch64'",
+    "torch",
+]
+comfyui-depthanythingv2-16ef6428 = [
+    "accelerate",
+    "huggingface-hub",
+]
+comfyui-depthflow-nodes-31111da7 = [
+    "depthflow==0.9.1",
+    "numpy",
+    "opencv-python",
+    "pydantic",
+]
+comfyui-kjnodes-ece3b04f = [
+    "color-matcher",
+    "huggingface-hub",
+    "matplotlib",
+    "mss",
+    "opencv-python",
+    "pillow>=10.3.0",
+    "scipy",
+]
+comfyui-videohelpersuite-ffcc3e88 = [
+    "imageio-ffmpeg",
+    "opencv-python",
+]
