@@ -13,7 +13,7 @@ pip install comfydock-cli
 
 Then import the workflow:
 ```bash
-cfd import https://github.com/akatz-ai/ComfyUI-Akatz-Workflows.git#depthflow-showcase-v2
+cfd import https://github.com/akatz-ai/ComfyUI-Akatz-Workflows.git#seamless-tiling-v1-2
 ```
 
 ## Overview
